@@ -10,7 +10,7 @@ Nhóm iOS gồm có các thành viên như sau:
 
 3. Thái Thị Kim Yến - 47.01.104.250
 
-4. Nguyễn Ngọc Thanh Thanh - 47.01.103.193
+4. Nguyễn Ngọc Thanh Thanh - 47.01.104.193
 
 5. Tăng Ngọc Phụng  - 46.01.103.055
 
