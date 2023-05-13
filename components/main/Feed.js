@@ -27,7 +27,7 @@ function Feed(props){
             .collection("likes")
             .doc(firebase.auth().currentUser.uid)
             .set({})
-        
+
         await firebase.firestore()
             .collection("posts")
             .doc(userId)
@@ -86,12 +86,17 @@ function Feed(props){
                     renderItem={({item}) => (
                         <View style={styles.containerImages}>
                             <View style = {styles.row}>
-                                <Image
-                                    style={{ width: 40, height: 40, marginLeft: 10, marginRight: 10, borderRadius: 40 }}
-                                    resizeMode="contain"
-                                    source={{ uri: item.user.image }}
-                                />
-                                <Text style={styles.UserName}>{item.user.name}</Text>
+                                <TouchableOpacity
+                                    style={{ flexDirection: "row", alignItems: "center" }}
+                                    onPress={() => props.navigation.navigate("ProfileOther", { uid: item.user.uid})}
+                                >
+                                    <Image
+                                        style={{ width: 40, height: 40, marginLeft: 10, marginRight: 10, borderRadius: 40 }}
+                                        resizeMode="contain"
+                                        source={{ uri: item.user.image }}
+                                    />
+                                    <Text style={styles.UserName}>{item.user.name}</Text>
+                                </TouchableOpacity>
                             </View>
                                 <Text style={styles.Caption}> {item.caption}</Text>
                                 <Image style={styles.image} source={{uri: item.downloadUrl}}/>  
@@ -158,7 +163,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     UserName:{
-        fontSize: 26,
+        fontSize: 18,
         fontWeight: 'bold',
         color: '#020617'
     },
